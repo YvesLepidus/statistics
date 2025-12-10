@@ -52,7 +52,7 @@ class StatisticsHandler extends Handler {
 	
 	
 	function getStatisticsWeek() {
-		$request = Application::getRequest();
+		$request = \Application::get()->getRequest();
 		$journal = $request->getJournal();
 		
 		//statistics report
@@ -91,7 +91,7 @@ class StatisticsHandler extends Handler {
 	 */
 
 	function getStatisticsByMonth() {
-		$request = Application::getRequest();
+		$request = \Application::get()->getRequest();
 		$journal =& $request->getJournal();
 
 		$year = $request->getUserVar('year');
@@ -124,7 +124,7 @@ class StatisticsHandler extends Handler {
 	 * Get statistics (download and abstract) by year from table METRICS
 	 */
 	function getStatisticsByYear() {
-		$request = Application::getRequest();
+		$request = \Application::get()->getRequest();
 		$journal =& $request->getJournal();
 		$year = $request->getUserVar('year');
 		if (empty($year)) $year = date('Y');
@@ -154,7 +154,7 @@ class StatisticsHandler extends Handler {
 	 * Get statistics (abstract) by country from table METRICS
 	 */
 	function getStatisticsByCountryAbstract() {
-		$request = Application::getRequest();
+		$request = \Application::get()->getRequest();
 		$journal =& $request->getJournal();
 		$year = $request->getUserVar('year');
 		if (empty($year)) $year = date('Y');
@@ -181,7 +181,7 @@ class StatisticsHandler extends Handler {
 	 * Get statistics (download) by country from table METRICS
 	 */
 	function getStatisticsByCountryDownload() {
-		$request = Application::getRequest();
+		$request = \Application::get()->getRequest();
 		$journal =& $request->getJournal();
 		$year = $request->getUserVar('year');
 		if (empty($year)) $year = date('Y');
@@ -206,7 +206,7 @@ class StatisticsHandler extends Handler {
 	 * Get statistics (download or abstract, request parameter) most popular articles from table METRICS
 	 */
 	function getStatisticsMostPopularDownload() {
-		$request = Application::getRequest();
+		$request = \Application::get()->getRequest();
 		$journal =& $request->getJournal();
 		$primaryLocale = $journal->getPrimaryLocale();
 
@@ -235,7 +235,7 @@ class StatisticsHandler extends Handler {
 	 * Get statistics (download) most popular articles from table METRICS
 	 */
 	function getStatisticsIssues() {
-		$request = Application::getRequest();
+		$request = \Application::get()->getRequest();
 		$journal =& $request->getJournal();
 		$primaryLocale = $journal->getPrimaryLocale();
 
