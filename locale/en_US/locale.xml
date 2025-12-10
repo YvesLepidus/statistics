@@ -36,7 +36,7 @@
 	<message key="plugins.generic.statistics.downloadByCountries">Downloads</message>
 	<message key="plugins.generic.statistics.viewAbstracts">Views</message>
 	<message key="plugins.generic.statistics.viewAbstractsByCountry">Article abstract page views</message>
-	<message key="plugins.generic.statistics.viewDownloads">Donwloads</message>
+	<message key="plugins.generic.statistics.viewDownloads">Downloads</message>
 	<message key="plugins.generic.statistics.lastYears2">Last 6 years</message>
 	<message key="plugins.generic.statistics.byMonthArticle">Last 12 months</message>
 	<message key="plugins.generic.statistics.byMonth">For months of the year</message>

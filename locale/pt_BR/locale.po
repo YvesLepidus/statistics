@@ -85,7 +85,7 @@ msgid "plugins.generic.statistics.viewAbstractsByCountry"
 msgstr "Visualizações da página de resumo do artigo"
 
 msgid "plugins.generic.statistics.viewDownloads"
-msgstr "Donwloads"
+msgstr "Downloads"
 
 msgid "plugins.generic.statistics.lastYears2"
 msgstr "Últimos 6 anos"
