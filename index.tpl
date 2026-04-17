@@ -267,13 +267,15 @@
 				for (var i = 0; i < data.length; i++){
 					optionsArticleDownload.series[0].data[i] = ["#"+(i+1), parseInt(data[i].count)];
 
-					$("#tbodyDownload").append( '<tr>'+
-							'<td class="text-center success">'+(i+1)+'</td>'+
-						    '<td class="text-left">'+
-							'<a href="' + base_url_journal + '/article/view/'+data[i].id+'" class="pkpStatistics__itemLink">'+data[i].article+'</a>'+
-							'</td>'+
-						    '<td class="text-center">'+data[i].count+'</td>'+
-					      	'</tr>');
+					var $link = $('<a>')
+						.attr('href', base_url_journal + '/article/view/' + parseInt(data[i].id))
+						.addClass('pkpStatistics__itemLink')
+						.text(data[i].article);
+					var $row = $('<tr>')
+						.append($('<td>').addClass('text-center success').text(i+1))
+						.append($('<td>').addClass('text-left').append($link))
+						.append($('<td>').addClass('text-center').text(data[i].count));
+					$("#tbodyDownload").append($row);
 				}
 
 				chartArticleDownload = new Highcharts.Chart(optionsArticleDownload);
@@ -295,13 +297,14 @@
 				for (var i = 0; i < data.length; i++){
 					optionsArticleAbstract.series[0].data[i] = ["#"+(i+1), parseInt(data[i].count)];
 
-					$("#tbodyAbstract").append( '<tr>'+
-							'<td class="text-center success">'+(i+1)+'</td>'+
-						    '<td class="text-left">'+
-							'<a href="' + base_url_journal + '/article/view/'+data[i].id+'">'+data[i].article+'</a>'+
-							'</td>'+
-						    '<td class="text-center">'+data[i].count+'</td>'+
-					      	'</tr>');
+					var $link = $('<a>')
+						.attr('href', base_url_journal + '/article/view/' + parseInt(data[i].id))
+						.text(data[i].article);
+					var $row = $('<tr>')
+						.append($('<td>').addClass('text-center success').text(i+1))
+						.append($('<td>').addClass('text-left').append($link))
+						.append($('<td>').addClass('text-center').text(data[i].count));
+					$("#tbodyAbstract").append($row);
 				}
 
 				chartArticleAbstract = new Highcharts.Chart(optionsArticleAbstract);
@@ -323,14 +326,14 @@
 				for (var i = 0; i < data.length; i++){
 					optionsIssues.series[0].data[i] = ["Vol. "+data[i].volume+", Num. "+data[i].number+", Year "+data[i].year, parseInt(data[i].count)];
 
-					$("#tbodyIssues").append( '<tr>'+
-							'<td class="text-center success">'+(i+1)+'</td>'+
-							'<td class="text-center">'+data[i].volume+'</td>'+
-							'<td class="text-center">'+data[i].number+'</td>'+
-							'<td class="text-center">'+data[i].year+'</td>'+
-						    '<td class="text-left">'+data[i].name+'</td>'+
-						    '<td class="text-center">'+data[i].count+'</td>'+
-					      	'</tr>');
+					var $row = $('<tr>')
+						.append($('<td>').addClass('text-center success').text(i+1))
+						.append($('<td>').addClass('text-center').text(data[i].volume))
+						.append($('<td>').addClass('text-center').text(data[i].number))
+						.append($('<td>').addClass('text-center').text(data[i].year))
+						.append($('<td>').addClass('text-left').text(data[i].name))
+						.append($('<td>').addClass('text-center').text(data[i].count));
+					$("#tbodyIssues").append($row);
 				}
 
 				chartIssues = new Highcharts.Chart(optionsIssues);

@@ -14,8 +14,8 @@
 <version>
 	<application>statistics</application>
 	<type>plugins.generic</type>
-	<release>2.1.3.0</release>
-	<date>2023-11-08</date>
+	<release>2.1.4.2</release>
+	<date>2026-04-17</date>
 	<lazy-load>1</lazy-load>
 	<sitewide>1</sitewide>
 	<class>StatisticsPlugin</class>
